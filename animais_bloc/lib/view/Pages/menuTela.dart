@@ -28,13 +28,13 @@ class _MenuState extends State<MenuTela> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               CustomFadeInDropAnimation(3, createAnimalCard()),
-              CustomFadeInDropAnimation(5, createAnimalCard()),
+              CustomFadeInDropAnimation(4.5, createAnimalCard()),
             ],
           ),
 
           SizedBox(height: 30),
 
-            CustomFadeInDropAnimation(7, createAnimalCard()),
+            CustomFadeInDropAnimation(6, createAnimalCard()),
         ],
       ),
     );
