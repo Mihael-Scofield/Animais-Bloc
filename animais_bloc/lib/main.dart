@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
   runApp(MyApp());
+
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 }
 
 class MyApp extends StatelessWidget {
@@ -9,60 +13,44 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'Tu apertaste o maizinho',
-            ),
-            Text(
-              '$_counter vezes',
-              style: TextStyle(color: Colors.pink, fontSize: 30, fontWeight: FontWeight.bold),
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ),
-    );
+        supportedLocales: [
+          Locale('en', 'US'),
+          Locale('pt', 'BR')
+        ],
+        routes: {
+          //'/send': (context) => BlocProvider(
+          //    create: (context) => SendBloc(sendRepository: SendRepositoryImpl(), isAdmin: false), child: SendPage()),
+        },
+        title: 'Pyrasun',
+        theme: ThemeData(
+            fontFamily: 'Trebuchet',
+            textTheme: TextTheme(
+                bodyText1: TextStyle(
+                    fontSize: 12.0,
+                    color: Color.fromRGBO(142, 142, 142, 1),
+                    fontWeight: FontWeight.bold),
+                bodyText2: (TextStyle(
+                    fontSize: 12.0,
+                    color: Color.fromRGBO(0, 178, 169, 1),
+                    fontWeight: FontWeight.bold)),
+                subtitle1: TextStyle(
+                    fontSize: 14,
+                    color: Color.fromRGBO(112, 112, 112, 1),
+                    fontWeight: FontWeight.bold),
+                headline6: TextStyle(
+                    fontSize: 26,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold),
+                subtitle2: TextStyle(
+                    fontSize: 12, color: Color.fromRGBO(112, 112, 112, 1)),
+                button: TextStyle(
+                  fontSize: 12,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                )),
+            primaryColor: Color.fromRGBO(0, 98, 152, 1),
+            accentColor: Color.fromRGBO(0, 178, 169, 1)),
+        home: SplashScreen(),
+        );
   }
 }
