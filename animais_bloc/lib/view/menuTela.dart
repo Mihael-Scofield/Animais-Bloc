@@ -19,6 +19,7 @@ class _MenuState extends State<MenuTela> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromRGBO(255, 195, 13, 1),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -44,7 +45,7 @@ class _MenuState extends State<MenuTela> {
         borderRadius: BorderRadius.circular(25),
         child: Container(
             child: Center(child: Text("Hello World!")),
-            color: Colors.pink,
+            color: Colors.lightBlueAccent,
             height: 120,
             width: 120),
       ),
