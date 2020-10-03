@@ -1,6 +1,6 @@
+import 'package:animais_bloc/view/menuTela.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
   runApp(MyApp());
@@ -48,9 +48,8 @@ class MyApp extends StatelessWidget {
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
                 )),
-            primaryColor: Color.fromRGBO(0, 98, 152, 1),
-            accentColor: Color.fromRGBO(0, 178, 169, 1)),
-        home: SplashScreen(),
+            primaryColor: Color.fromRGBO(255, 195, 13, 1)),
+        home: MenuTela(),
         );
   }
 }
