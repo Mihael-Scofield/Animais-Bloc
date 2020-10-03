@@ -19,7 +19,22 @@ class _MenuState extends State<MenuTela> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: createAnimalCard()),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              createAnimalCard(),
+              createAnimalCard(),
+            ],
+          ),
+
+          SizedBox(height: 30),
+
+          createAnimalCard()
+        ],
+      ),
     );
   }
 
@@ -30,8 +45,8 @@ class _MenuState extends State<MenuTela> {
         child: Container(
             child: Center(child: Text("Hello World!")),
             color: Colors.pink,
-            height: 125,
-            width: 125),
+            height: 120,
+            width: 120),
       ),
       onTap: () {
         //TODO Navega para pagina do animal navigateToAnimalPage(inkAnimal); // Navega de acordo com a chamada
