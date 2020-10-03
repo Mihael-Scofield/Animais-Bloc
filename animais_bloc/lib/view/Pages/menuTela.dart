@@ -1,3 +1,4 @@
+import 'package:animais_bloc/view/CustomWidgets/customFadeInDropAnimation.dart';
 import 'package:flutter/material.dart';
 
 class MenuTela extends StatefulWidget {
@@ -26,14 +27,14 @@ class _MenuState extends State<MenuTela> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              createAnimalCard(),
-              createAnimalCard(),
+              CustomFadeInDropAnimation(3, createAnimalCard()),
+              CustomFadeInDropAnimation(5, createAnimalCard()),
             ],
           ),
 
           SizedBox(height: 30),
 
-          createAnimalCard()
+            CustomFadeInDropAnimation(7, createAnimalCard()),
         ],
       ),
     );
