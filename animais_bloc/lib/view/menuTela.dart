@@ -19,7 +19,23 @@ class _MenuState extends State<MenuTela> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: Text("Olá Mundo!", style: Theme.of(context).textTheme.bodyText2))
+      body: Center(child: createAnimalCard()),
+    );
+  }
+
+  Widget createAnimalCard() {
+    return InkWell(
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(25),
+        child: Container(
+            child: Center(child: Text("Hello World!")),
+            color: Colors.pink,
+            height: 125,
+            width: 125),
+      ),
+      onTap: () {
+        //TODO Navega para pagina do animal navigateToAnimalPage(inkAnimal); // Navega de acordo com a chamada
+      },
     );
   }
 }
